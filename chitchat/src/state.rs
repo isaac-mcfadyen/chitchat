@@ -14,11 +14,11 @@ use crate::{NodeId, Version, VersionedValue};
 
 #[derive(Clone, Serialize, Deserialize, Debug)]
 pub struct NodeState {
-    pub(crate) key_values: BTreeMap<String, VersionedValue>,
+    pub key_values: BTreeMap<String, VersionedValue>,
     #[serde(skip)]
     #[serde(default = "Instant::now")]
     last_heartbeat: Instant,
-    pub(crate) max_version: u64,
+    pub max_version: u64,
 }
 
 impl Default for NodeState {
@@ -116,8 +116,8 @@ impl NodeState {
 }
 
 #[derive(Debug)]
-pub(crate) struct ClusterState {
-    pub(crate) node_states: BTreeMap<NodeId, NodeState>,
+pub struct ClusterState {
+    pub node_states: BTreeMap<NodeId, NodeState>,
     seed_addrs: watch::Receiver<HashSet<SocketAddr>>,
 }
 

@@ -6,8 +6,8 @@ use crate::{NodeId, Version, VersionedValue};
 
 #[derive(Default, Eq, PartialEq, Debug)]
 pub struct Delta {
-    pub(crate) node_deltas: BTreeMap<NodeId, NodeDelta>,
-    pub(crate) nodes_to_reset: HashSet<NodeId>,
+    pub node_deltas: BTreeMap<NodeId, NodeDelta>,
+    pub nodes_to_reset: HashSet<NodeId>,
 }
 
 impl Serializable for Delta {
@@ -98,7 +98,7 @@ impl Delta {
 }
 
 #[derive(serde::Serialize, Default, Eq, PartialEq, Debug)]
-pub(crate) struct NodeDelta {
+pub struct NodeDelta {
     pub key_values: BTreeMap<String, VersionedValue>,
 }
 

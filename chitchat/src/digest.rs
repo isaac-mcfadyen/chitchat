@@ -10,7 +10,7 @@ use crate::{NodeId, Version};
 /// peer -> max version.
 #[derive(Debug, Default, PartialEq, Eq)]
 pub struct Digest {
-    pub(crate) node_max_version: BTreeMap<NodeId, Version>,
+    pub node_max_version: BTreeMap<NodeId, Version>,
 }
 
 impl Digest {
