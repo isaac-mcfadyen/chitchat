@@ -1,15 +1,14 @@
 #![allow(clippy::type_complexity)]
 #![allow(clippy::derive_partial_eq_without_eq)]
 
-mod server;
-
-mod configuration;
-mod delta;
-mod digest;
-mod failure_detector;
-mod message;
+pub mod server;
+pub mod configuration;
+pub mod delta;
+pub mod digest;
+pub mod failure_detector;
+pub mod message;
 pub mod serialize;
-mod state;
+pub mod state;
 pub mod transport;
 
 use std::collections::HashSet;
